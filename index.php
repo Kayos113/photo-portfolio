@@ -1,3 +1,18 @@
+<?php
+if($_POST["message"]) {
+	$recipient="willyknapp@gmail.com";
+	$subject="Form to email message";
+	$sender=$_POST["name"];
+	$senderEmail=$_POST["email"];
+	$message=$_POST["message"];
+
+	$mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
+	mail($recipient, $subject, $mailBody, "From: $sender<$senderEmail>");
+
+	$thankyou="<p>Thank you! Your message has been sent.</p>"
+}
+?>
+
 <!DOCTYPE HTML>
 <!--
 	Massively by HTML5 UP
@@ -110,7 +125,7 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<section>
-							<form method="post" action="mailto:willyknap@gmail.com" target="_blank">
+							<form method="post" action="index.php">
 								<div class="fields">
 									<div class="field">
 										<label for="name">Name</label>
@@ -127,6 +142,7 @@
 								</div>
 								<ul class="actions">
 									<li><input type="submit" value="Send Message" /></li>
+									<li><?=$thankyou ?></li>
 								</ul>
 							</form>
 						</section>
@@ -138,7 +154,7 @@
 							</section> -->
 							<section>
 								<h3>Phone</h3>
-								<p><a href="#" target="_blank">(631) 672-1609</a></p>
+								<p><a href="#">(631) 672-1609</a></p>
 							</section>
 							<section>
 								<h3>Email</h3>
