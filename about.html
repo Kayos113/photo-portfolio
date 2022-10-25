@@ -35,6 +35,9 @@
 												submitMessage.innerHTML = "Message Sent!"
                     }, function(error) {
                         console.log('FAILED...', error);
+												submitMessage.classList.remove("invisible");
+												submitMessage.classList.add("error");
+												submitMessage.innerHTML = "Message did not send. Try again later";
                     });
             });
         }
@@ -114,7 +117,7 @@
 								</div>
 							</div>
 							<ul class="actions">
-								<li><input id="submit-button" type="submit" value="Send Message" /><h3 class="invisible" id="submit-message">Message Sent!</h3></li>
+								<li><input id="submit-button" type="submit" value="Send Message" /><h3 class="invisible" id="submit-message"></h3></li>
 							</ul>
 						</form>
 					</section>
