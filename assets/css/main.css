@@ -4732,3 +4732,7 @@ input, select, textarea {
 		padding: inherit;
 		margin: inherit;
 	}
+
+	.invisible {
+		display: none !important;
+	}
